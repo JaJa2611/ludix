@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">LUDIX – Alle deine PC-Spiele an einem Ort</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="LUDIX bringt deine Spiele von Steam, Epic Games und Xbox in eine App – mit Preisvergleich, Wunschliste, Preiswecker und Update-Übersicht. Kostenlos für Windows.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <meta property="og:title" content="LUDIX">
+  <meta property="og:description" data-i18n-attr="content:meta.desc" content="LUDIX bringt deine Spiele von Steam, Epic Games und Xbox in eine App – mit Preisvergleich, Wunschliste, Preiswecker und Update-Übersicht. Kostenlos für Windows.">
+  <meta property="og:image" content="assets/screens/library.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- ===== Kopfleiste ===== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="LUDIX">
+        <img src="assets/logo.svg" alt="" width="30" height="30">
+        <span>LUDIX</span>
+      </a>
+      <nav class="topnav">
+        <a href="#features" data-i18n="nav.features">Funktionen</a>
+        <a href="#download" data-i18n="nav.download">Download</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="topbar-actions">
+        <div class="lang">
+          <button id="lang-button" class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-attr="aria-label:lang.label" aria-label="Sprache wählen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-2.9a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8ZM12 4a13.7 13.7 0 0 1 1.9 4h-3.8A13.7 13.7 0 0 1 12 4ZM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3Zm.8 2h2.9a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16ZM8 8H5.1a8 8 0 0 1 4.3-3.6C8.8 5.5 8.3 6.7 8 8Zm4 12a13.7 13.7 0 0 1-1.9-4h3.8A13.7 13.7 0 0 1 12 20Zm2.3-6H9.7a14.6 14.6 0 0 1 0-4h4.6a14.6 14.6 0 0 1 0 4Zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6Zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4Z"/></svg>
+            <span id="lang-current">DE</span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" hidden></ul>
+        </div>
+        <a class="btn btn-primary btn-small download-link" href="#download">
+          <span data-i18n="nav.cta">Herunterladen</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow">Kostenlos für Windows</p>
+        <h1 class="reveal" data-i18n="hero.title">Alle deine PC-Spiele.<br>Ein Ort.</h1>
+        <p class="lead reveal" data-i18n="hero.lead">LUDIX findet deine Spiele von Steam, Epic Games und Xbox automatisch, startet sie mit einem Klick und zeigt dir, wo neue Spiele gerade am günstigsten sind.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary btn-large download-link" href="#" data-download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.4 4.5v7H3v-6Zm0 13 7.4 1v-7H3v6Zm8.3 1.1L21 21v-8.5h-9.7v7.1Zm0-15.2v7.1H21V3l-9.7 1.4Z"/></svg>
+            <span data-i18n="cta.windows">Für Windows herunterladen</span>
+          </a>
+          <a class="btn btn-ghost btn-large" href="#features" data-i18n="hero.more">Mehr erfahren</a>
+        </div>
+        <p class="meta reveal"><span data-i18n="cta.meta">Windows 10 &amp; 11</span> · <span data-version></span> · <span data-size></span></p>
+        <ul class="platforms reveal" data-i18n-attr="aria-label:hero.platforms" aria-label="Unterstützte Plattformen">
+          <li><span class="dot" style="--c: var(--steam)"></span>Steam</li>
+          <li><span class="dot" style="--c: var(--epic)"></span>Epic Games</li>
+          <li><span class="dot" style="--c: var(--xbox)"></span>Xbox</li>
+        </ul>
+      </div>
+      <div class="container">
+        <figure class="shot shot-hero reveal">
+          <img src="assets/screens/library.png" width="1335" height="851" data-zoom
+               data-i18n-attr="alt:shot.library" alt="Die LUDIX-Bibliothek mit Spielen von Steam, Epic Games und Xbox">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Funktionen ===== -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="features.eyebrow">Funktionen</p>
+          <h2 data-i18n="features.title">Eine App statt vier Launcher</h2>
+          <p class="lead" data-i18n="features.lead">Schluss mit dem Hin und Her zwischen Steam, Epic und der Xbox-App. LUDIX sammelt alles an einer Stelle.</p>
+        </div>
+
+        <article class="feature reveal">
+          <div class="feature-text">
+            <span class="feature-num">01</span>
+            <h3 data-i18n="f1.title">Deine ganze Bibliothek</h3>
+            <p data-i18n="f1.text">LUDIX erkennt installierte Spiele von Steam, Epic Games und Xbox ganz von selbst – mit Cover, Größe und Plattform. Suchen, sortieren, Favoriten markieren und mit einem Klick starten.</p>
+            <ul class="checks">
+              <li data-i18n="f1.c1">Automatische Spielerkennung</li>
+              <li data-i18n="f1.c2">Favoriten und Filter nach Plattform</li>
+              <li data-i18n="f1.c3">Spiele direkt aus LUDIX starten</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img src="assets/screens/library.png" width="1335" height="851" loading="lazy" data-zoom
+                 data-i18n-attr="alt:shot.library" alt="Die LUDIX-Bibliothek mit Spielen von Steam, Epic Games und Xbox">
+          </figure>
+        </article>
+
+        <article class="feature feature-flip reveal">
+          <div class="feature-text">
+            <span class="feature-num">02</span>
+            <h3 data-i18n="f2.title">Shop mit Preisvergleich</h3>
+            <p data-i18n="f2.text">Such ein Spiel und LUDIX vergleicht die Preise von Steam, Epic Games und dem Microsoft Store. Der günstigste Shop steht ganz oben – inklusive Rabatt und Ersparnis.</p>
+            <ul class="checks">
+              <li data-i18n="f2.c1">Drei Shops auf einen Blick</li>
+              <li data-i18n="f2.c2">Bester Preis wird hervorgehoben</li>
+              <li data-i18n="f2.c3">Mit einem Klick zum Shop</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img src="assets/screens/store.png" width="1335" height="851" loading="lazy" data-zoom
+                 data-i18n-attr="alt:shot.store" alt="Der LUDIX-Shop vergleicht die Preise von Cyberpunk 2077">
+          </figure>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-text">
+            <span class="feature-num">03</span>
+            <h3 data-i18n="f3.title">Wunschliste mit Preiswecker</h3>
+            <p data-i18n="f3.text">Merk dir Spiele und stell einen Wunschpreis ein. Sobald ein Spiel darunter fällt, meldet sich LUDIX mit einer Windows-Benachrichtigung. Deine Steam-Wunschliste übernimmst du mit einem Klick.</p>
+            <ul class="checks">
+              <li data-i18n="f3.c1">Benachrichtigung beim Wunschpreis</li>
+              <li data-i18n="f3.c2">Import der Steam-Wunschliste</li>
+              <li data-i18n="f3.c3">Preise werden regelmäßig geprüft</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img src="assets/screens/wishlist.png" width="1335" height="851" loading="lazy" data-zoom
+                 data-i18n-attr="alt:shot.wishlist" alt="Die LUDIX-Wunschliste mit Preisen und Preiswecker">
+          </figure>
+        </article>
+
+        <article class="feature feature-flip reveal">
+          <div class="feature-text">
+            <span class="feature-num">04</span>
+            <h3 data-i18n="f4.title">Alle Updates im Blick</h3>
+            <p data-i18n="f4.text">Sieh auf einen Blick, welche Spiele ein Update brauchen, wie groß es ist und wie lange es dauert. Downloads laufen mit Live-Fortschritt – egal ob Steam, Epic oder Xbox.</p>
+            <ul class="checks">
+              <li data-i18n="f4.c1">Live-Fortschritt für alle Plattformen</li>
+              <li data-i18n="f4.c2">Größe und geschätzte Dauer</li>
+              <li data-i18n="f4.c3">Alle Updates mit einem Klick</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img src="assets/screens/updates.png" width="1335" height="851" loading="lazy" data-zoom
+                 data-i18n-attr="alt:shot.updates" alt="Die LUDIX-Update-Übersicht mit Größe und Dauer">
+          </figure>
+        </article>
+
+        <div class="extras">
+          <div class="extra reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.4 3.2 3.2-1.4 1.4L11 13.2V6h2v6.4Z"/></svg>
+            <h4 data-i18n="x1.title">Läuft im Hintergrund</h4>
+            <p data-i18n="x1.text">Preiswecker und Updates arbeiten weiter, auch wenn das Fenster zu ist.</p>
+          </div>
+          <div class="extra reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Zm-1.4 15.4L6.2 12l1.4-1.4 3 3 6-6 1.4 1.4-7.4 7.4Z"/></svg>
+            <h4 data-i18n="x2.title">Deine Daten bleiben bei dir</h4>
+            <p data-i18n="x2.text">Kein Konto, keine Passwörter. Favoriten und Wunschliste liegen nur auf deinem PC.</p>
+          </div>
+          <div class="extra reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+            <h4 data-i18n="x3.title">Startet mit Windows</h4>
+            <p data-i18n="x3.text">Auf Wunsch startet LUDIX unsichtbar mit Windows – abschaltbar mit einem Klick.</p>
+          </div>
+          <div class="extra reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .6.2 1.1.6 1.4l9 9a2 2 0 0 0 2.8 0l7-7a2 2 0 0 0 0-2.8ZM6.5 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
+            <h4 data-i18n="x4.title">Kostenlos</h4>
+            <p data-i18n="x4.text">LUDIX kannst du kostenlos herunterladen und nutzen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Download ===== -->
+    <section id="download" class="section">
+      <div class="container">
+        <div class="download-card reveal">
+          <img src="assets/logo.svg" alt="" width="72" height="72">
+          <h2 data-i18n="dl.title">Hol dir LUDIX</h2>
+          <p class="lead" data-i18n="dl.lead">Installer herunterladen, ausführen, fertig. LUDIX findet deine Spiele beim ersten Start von selbst.</p>
+          <a class="btn btn-primary btn-large download-link" href="#" data-download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.4 4.5v7H3v-6Zm0 13 7.4 1v-7H3v6Zm8.3 1.1L21 21v-8.5h-9.7v7.1Zm0-15.2v7.1H21V3l-9.7 1.4Z"/></svg>
+            <span data-i18n="cta.windows">Für Windows herunterladen</span>
+          </a>
+          <p class="meta"><span data-i18n="cta.meta">Windows 10 &amp; 11</span> · <span data-version></span> · <span data-size></span></p>
+
+          <ol class="steps">
+            <li><span>1</span><p data-i18n="dl.s1">Lade den Installer herunter und öffne ihn.</p></li>
+            <li><span>2</span><p data-i18n="dl.s2">Wähle einen Ordner – Admin-Rechte brauchst du nicht.</p></li>
+            <li><span>3</span><p data-i18n="dl.s3">Starte LUDIX über den Desktop oder das Startmenü.</p></li>
+          </ol>
+
+          <div class="note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>
+            <p data-i18n="dl.note"><strong>Hinweis zur Windows-Warnung:</strong> LUDIX ist neu und noch nicht digital signiert. Windows zeigt deshalb eventuell „Der Computer wurde durch Windows geschützt“. Klicke dann auf <em>Weitere Informationen</em> und danach auf <em>Trotzdem ausführen</em>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section">
+      <div class="container container-narrow">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+          <h2 data-i18n="faq.title">Häufige Fragen</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal">
+            <summary data-i18n="q1.q">Kostet LUDIX etwas?</summary>
+            <p data-i18n="q1.a">Nein, LUDIX ist kostenlos.</p>
+          </details>
+          <details class="reveal">
+            <summary data-i18n="q2.q">Welche Plattformen werden unterstützt?</summary>
+            <p data-i18n="q2.a">Steam, Epic Games und Xbox bzw. der Microsoft Store. Weitere Plattformen sind geplant.</p>
+          </details>
+          <details class="reveal">
+            <summary data-i18n="q3.q">Muss ich mich mit meinen Konten anmelden?</summary>
+            <p data-i18n="q3.a">Nein. LUDIX liest nur, welche Spiele auf deinem PC installiert sind. Passwörter oder Logins für Steam, Epic oder Xbox braucht LUDIX nicht.</p>
+          </details>
+          <details class="reveal">
+            <summary data-i18n="q4.q">Ersetzt LUDIX Steam, Epic und die Xbox-App?</summary>
+            <p data-i18n="q4.a">Nicht ganz. Die Launcher müssen installiert bleiben, denn deine Spiele laufen weiter über sie. LUDIX ist die gemeinsame Oberfläche darüber, damit du sie nicht einzeln öffnen musst.</p>
+          </details>
+          <details class="reveal">
+            <summary data-i18n="q5.q">Gibt es LUDIX auch für Mac oder Linux?</summary>
+            <p data-i18n="q5.a">Im Moment nur für Windows 10 und 11.</p>
+          </details>
+          <details class="reveal">
+            <summary data-i18n="q6.q">Wie deinstalliere ich LUDIX?</summary>
+            <p data-i18n="q6.a">Über Windows-Einstellungen → Apps. Dabei wird auch der Autostart entfernt. Deine Spiele bleiben natürlich installiert.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Fußzeile ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand brand-small">
+        <img src="assets/logo.svg" alt="" width="22" height="22">
+        <span>LUDIX</span>
+      </div>
+      <nav class="footer-links">
+        <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+      </nav>
+      <p class="footer-legal" data-i18n="footer.legal">© 2026 LUDIX. Steam, Epic Games, Xbox und Microsoft Store sind Marken ihrer jeweiligen Inhaber. LUDIX steht in keiner Verbindung zu diesen Unternehmen.</p>
+    </div>
+  </footer>
+
+  <!-- Vergrößerte Screenshots -->
+  <dialog id="lightbox" class="lightbox">
+    <button class="lightbox-close" type="button" data-i18n-attr="aria-label:lightbox.close" aria-label="Schließen">×</button>
+    <img alt="">
+  </dialog>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

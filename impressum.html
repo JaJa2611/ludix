@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum – LUDIX</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="legal-page">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="LUDIX">
+        <img src="assets/logo.svg" alt="" width="30" height="30">
+        <span>LUDIX</span>
+      </a>
+      <div class="topbar-actions">
+        <div class="lang">
+          <button id="lang-button" class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-attr="aria-label:lang.label" aria-label="Sprache wählen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-2.9a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8ZM12 4a13.7 13.7 0 0 1 1.9 4h-3.8A13.7 13.7 0 0 1 12 4ZM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3Zm.8 2h2.9a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16ZM8 8H5.1a8 8 0 0 1 4.3-3.6C8.8 5.5 8.3 6.7 8 8Zm4 12a13.7 13.7 0 0 1-1.9-4h3.8A13.7 13.7 0 0 1 12 20Zm2.3-6H9.7a14.6 14.6 0 0 1 0-4h4.6a14.6 14.6 0 0 1 0 4Zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6Zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4Z"/></svg>
+            <span id="lang-current">DE</span>
+          </button>
+          <ul id="lang-menu" class="lang-menu" role="listbox" hidden></ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="section legal">
+    <div class="container container-narrow">
+      <a class="back" href="index.html" data-i18n="footer.back">← Zurück zur Startseite</a>
+      <h1 data-i18n="footer.imprint">Impressum</h1>
+
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <!-- TODO: ladungsfähige Anschrift (z. B. Impressum-Service) ergänzen. -->
+      <p>Jakob Schwarz<br>Deutschland</p>
+
+      <h2>Kontakt</h2>
+      <p>E-Mail: <a href="mailto:jakob.v.schwarz@gmail.com">jakob.v.schwarz@gmail.com</a></p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>Jakob Schwarz</p>
+
+      <h2>Haftung für Links</h2>
+      <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+
+      <h2>Marken</h2>
+      <p>Steam, Epic Games, Xbox und Microsoft Store sind Marken ihrer jeweiligen Inhaber. LUDIX steht in keiner Verbindung zu diesen Unternehmen und wird von ihnen nicht unterstützt.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand brand-small"><img src="assets/logo.svg" alt="" width="22" height="22"><span>LUDIX</span></div>
+      <nav class="footer-links">
+        <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

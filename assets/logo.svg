@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- LUDIX-Logo (wie in der App): schwarze Kachel, schräg geschnittenes "L" mit Play-Dreieck -->
+  <path d="M256 8C452 8 504 60 504 256S452 504 256 504 8 452 8 256 60 8 256 8Z" fill="#0b0b0c" stroke="#2e2e32" stroke-width="4"/>
+  <g fill="#ffffff" transform="translate(-6 0)">
+    <polygon points="176,136 234,136 234,306 176,364"/>
+    <polygon points="246,318 356,318 356,376 188,376"/>
+    <polygon points="270,184 270,272 344,228"/>
+  </g>
+</svg>
